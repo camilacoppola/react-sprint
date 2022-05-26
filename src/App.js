@@ -1,11 +1,11 @@
 import './App.css';
-
+import MainRoutes from './routes/MainRoutes';
 function App() {
   return (
-    <div className="App">
-      APP Grupo1
-    </div>
-  );
+  <>
+    <MainRoutes />
+  </>
+  )
 }
 
 export default App;
