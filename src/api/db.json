@@ -1,0 +1,87 @@
+{
+  "shop": [
+    {
+      "id": 1,
+      "address": "Calle Juan Martín",
+      "type": "frutería",
+      "nombre": "Lola Castro Frutas",
+      "latitude": 37.880273,
+      "longitude": -4.792098
+    },
+    {
+      "id": 2,
+      "address": "Calle Pepe Cruz",
+      "type": "supermercado",
+      "nombre": "Ultramarinos Lolo Castro",
+      "latitude": 37.862323,
+      "longitude": -4.77812
+    },
+    {
+      "id": 3,
+      "address": "Avenida de la Cruz",
+      "type": "pescadería",
+      "nombre": "Pescados El Boquerón",
+      "latitude": 37.856273,
+      "longitude": -4.776992
+    }
+  ],
+  "products": [
+    {
+      "nombre": "cocacola",
+      "valor": "123",
+      "descripcion": "buen producto",
+      "opcionTienda": "tienda1",
+      "imagen": "https:imagencocacola",
+      "stock": 8,
+      "id": 1
+    },
+    {
+      "nombre": "cocacola",
+      "valor": "123",
+      "descripcion": "buen producto",
+      "opcionTienda": "tienda1",
+      "imagen": "https:imagencocacola",
+      "stock": 8,
+      "id": 2
+    },
+    {
+      "nombre": "cocacola",
+      "valor": "5",
+      "descripcion": "Buena la cocacola",
+      "opcionTienda": "mariscos",
+      "imagen": "https:\\\\cocacola.com.ar",
+      "stock": 5,
+      "id": 3
+    },
+    {
+      "nombre": "asdsad",
+      "valor": "123126",
+      "descripcion": "asdasd",
+      "opcionTienda": "mariscos",
+      "imagen": "asdasdasd",
+      "stock": 3,
+      "id": 4
+    },
+    {
+      "nombre": "asdasd",
+      "valor": "1",
+      "descripcion": "asdasd",
+      "opcionTienda": "mariscos",
+      "imagen": "asdsd",
+      "stock": 1,
+      "id": 5
+    },
+    {
+      "nombre": "cocacola",
+      "valor": "4",
+      "descripcion": "buena cocacola",
+      "opcionTienda": "mariscos",
+      "imagen": "https:\\\\latadecocacola.img",
+      "imagenes": [
+        "https:\\\\latadecocacola.img"
+      ],
+      "stock": 1,
+      "id": 6
+    }
+  ]
+}

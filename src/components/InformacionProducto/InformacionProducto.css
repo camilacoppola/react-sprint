@@ -1,0 +1,21 @@
+.InformacionProducto-contenedor_stockProducto {
+    border-radius: 16px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+    overflow: hidden;
+    margin-top: 2px;
+    background-color: rgba(73, 79, 81, 1);
+    width: 80px;
+}
+
+.InformacionProducto-contenedor_stockProducto button {
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: rgba(73, 79, 81, 1);
+    border: none;
+    color: white;
+}
+
