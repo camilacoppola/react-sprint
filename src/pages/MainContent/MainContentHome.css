@@ -1,0 +1,39 @@
+body{
+    background-color: black;
+}
+.Home-contenedor_home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.Home-productos_home, .Home-tiendas_home{
+    display: flex;
+    justify-content: space-between;
+    background-color: #222222;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    margin: 1rem;
+    color: white;
+}
+.Home-contenedorButton_home, .Home-imgDescripcion_home{
+    display: flex;
+    align-items: center;
+}
+
+.Home-button_home {
+    margin-right: 5px;
+    border-radius: 15px;
+    border: none;
+    padding: 0.5rem;
+    background-color: #494f51;
+    color: white;
+    cursor: pointer;
+}
+
+.Home-logoProductsTienda_home{
+    filter: invert(100%);
+    margin-right: 0.5rem;
+}

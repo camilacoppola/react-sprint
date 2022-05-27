@@ -1,0 +1,22 @@
+.ErrorStore-container_error{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+.ErrorStore-informacion_error{
+    align-items: center;
+}
+.ErrorStore-containerButton_error{
+    display: flex;
+    justify-content: center;
+}
+.ErrorStore-button_error{
+    
+    margin-right: 5px;
+    border-radius: 15px;
+    border: none;
+    padding: 0.5rem;
+    background-color: #494f51;
+    color: white;
+    cursor: pointer;
+}
