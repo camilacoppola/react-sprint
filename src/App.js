@@ -1,4 +1,4 @@
-import './App.css';
+import './generalCSS/reset.css';
 import MainRoutes from './routes/MainRoutes';
 function App() {
   return (

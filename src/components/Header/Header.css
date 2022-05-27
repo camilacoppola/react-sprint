@@ -1,0 +1,14 @@
+@import url('../../generalCSS/colors.css');
+
+.Header{
+    width: 100%;
+    background-color: var(--negroT1);
+    position: relative;
+    min-height: 10vh;
+}
+
+@media screen and (min-width: 1024px) {
+    .Header-button_hide{
+        display: none;
+    }
+}

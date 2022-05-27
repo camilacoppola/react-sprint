@@ -1,0 +1,20 @@
+@import url('../../generalCSS/colors.css');
+
+.active{
+    background-color: var(--grisT2);
+}
+
+.Sidebar{
+    height: 100vh;
+    display: none;
+}
+
+.Sidebar.Sidebar-showed{
+    display: block;
+}
+
+@media screen and (min-width: 1024px) {
+    .Sidebar.Sidebar-showed{
+        display: block;
+    }
+}
