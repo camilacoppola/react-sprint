@@ -5,6 +5,25 @@
     background-color: var(--negroT1);
     position: relative;
     min-height: 10vh;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.Header-button_hide{
+    padding: 0.5rem;
+}
+
+.Header-button_hide:hover{
+    background-color: var(--grisT2);
+}
+
+.Header-button_hide-image{
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(1);
+    object-fit: contain;
 }
 
 @media screen and (min-width: 1024px) {

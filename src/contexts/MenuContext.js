@@ -13,17 +13,6 @@ const MenuContext = ({children}) => {
             setMenuVisibility(menuState);
         }
 
-    // const menuActivo = {
-    //     estadoMenu: false,
-    //     toggleMenu : function() {
-    //         estadoMenu = !estadoMenu;
-    //         console.log(estadoMenu);
-    //     },
-    //     changeMenuVisibility : function(menuState){
-    //         estadoMenu = menuState;
-    //     }
-    // }
-
     return (
         <consumeMenuContext.Provider value={{menuVisibility, toggleMenu, changeMenuVisibility}}>
             {children}
