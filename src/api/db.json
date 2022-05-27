@@ -46,11 +46,10 @@
     },
     {
       "nombre": "cocacola",
-      "valor": "5",
-      "descripcion": "Buena la cocacola",
-      "opcionTienda": "mariscos",
-      "imagen": "https:\\\\cocacola.com.ar",
-      "stock": 5,
+      "valor": 200,
+      "descripcion": "sprite la mejor",
+      "opcionTienda": "pescaderia",
+      "imagen": "no tiene",
       "id": 3
     },
     {
@@ -70,18 +69,6 @@
       "imagen": "asdsd",
       "stock": 1,
       "id": 5
-    },
-    {
-      "nombre": "cocacola",
-      "valor": "4",
-      "descripcion": "buena cocacola",
-      "opcionTienda": "mariscos",
-      "imagen": "https:\\\\latadecocacola.img",
-      "imagenes": [
-        "https:\\\\latadecocacola.img"
-      ],
-      "stock": 1,
-      "id": 6
     }
   ]
 }

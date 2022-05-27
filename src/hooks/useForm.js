@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const useForm = (initialValues = {}) => {
-    const [form, setForm] = useState(initialValues)
+const useForm = (initialValues) => {
     
+    
+    const [form, setForm] = useState({})
+
+
+
     const handleChangeForm = (e) => {
         setForm({
             ...form,
@@ -10,11 +14,17 @@ const useForm = (initialValues = {}) => {
         })
     }
 
+    const cambiarCampos = (producto) => {
+        console.log("Hola cambio campos", producto, 'form:     ',form)
+        setForm({...producto})
+        
+    }
+
     const limpiarForm = () => {
         setForm(initialValues)
     }
 
-    return [form, handleChangeForm,limpiarForm]
+    return [form, handleChangeForm,limpiarForm,cambiarCampos]
 }
 
 export default useForm

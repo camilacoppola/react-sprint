@@ -1,63 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import useForm from '../../hooks/useForm'
-import useIncrementOrDecrement from '../../hooks/useIncrementOrDecrement'
-import guardarProducto from '../../utils/guardarProducto'
+import useForm from '../../../hooks/useForm'
+import useIncrementOrDecrement from '../../../hooks/useIncrementOrDecrement'
+import actualizarProducto from '../../../utils/actualizarProducto'
+
 import GaleriaImagenesActuales from '../GaleriaImagenesActuales/GaleriaImagenesActuales'
-import './InformacionProducto.css'
+import './ProductForm.css'
 
-const InformacionProducto = () => {
+const ProductForm = ({producto = {},handleSubmit}) => {
+    console.log(producto)
     
-    const navigate = useNavigate()
-
+    
+    
     const [error, setError] = useState({
         estado: false,
         msg: ''
     })
-
-    const [form,handleChangeForm,limpiarForm] = useForm({
+    
+    
+    const [form,handleChangeForm,limpiarForm,cambiarCampos] = useForm({
         nombre:'',
         valor: 0,
         descripcion: '',
         opcionTienda: '',
         imagen: ''
     })
-
-    const {nombre,valor, descripcion, opcionTienda, imagen} = form
-
+    
+    //const {nombre,valor, descripcion, opcionTienda, imagen} = form
+    //console.log(nombre, ' nombre')
     const [stock,incrementar,decrementar] = useIncrementOrDecrement(0)
+    
+    useEffect(() => {
+      if(producto){
+        cambiarCampos(producto)
+      }
+    }, [producto])
 
-    const handleGuardarProducto = async(e) => {
-        e.preventDefault()
-        //limpiarForm()
-        if(nombre === '' || imagen === '' || valor === '' || stock === '' || opcionTienda === ''){
-            //setError({estado:true,msg:'No se pueden dejar campos vacios'})
-            return
-        }
-        console.log("hola")
-        if(Number(valor) <= 0 || Number(stock) <= 0){
-            //setError({estado:true,msg:"No se pueden negativos, ni stock 0"})
-            return
-        }
-        console.log("hola")
-        await guardarProducto({
-            ...form,
-            imagenes:[imagen],
-            stock
-        })
-        //setError({estado:false,msg:''})
-        navigate('/')
-        console.log(imagen, ' ', nombre, ' ',valor, ' ', stock, ' ', descripcion, ' ', opcionTienda)
-    }
 
+    
   return (
     <section>
                 <h2>Informacion</h2>
                 <div>
                     <label>Nombre</label>
-                    <input placeholder='Nombre' name='nombre' type={"text"} value={nombre} onChange={handleChangeForm} />
-                </div>
-                <div>
+                    <input placeholder='Nombre' name='nombre' type={"text"} value={form.nombre} onChange={handleChangeForm} />
+  </div>
+                {/*<div>
                     <label>Valor</label>
                     <input placeholder='Valor' name='valor' type={"number"} value={valor} onChange={handleChangeForm}/>
                 </div>
@@ -81,13 +69,13 @@ const InformacionProducto = () => {
                         <option value="pescados">Pescados El Boquerón</option>
                     </select>
                 </div>
-                <GaleriaImagenesActuales imagen={imagen} handleChangeForm={handleChangeForm}/>
-                <form onSubmit={handleGuardarProducto}>
+  <GaleriaImagenesActuales imagen={imagen} handleChangeForm={handleChangeForm}/>*/}
+                <form onSubmit={handleSubmit}>
                     <button>Guardar</button>
                     <button><Link to="/asdsad">Cancelar</Link></button>
-                </form>
+  </form>
     </section>
   )
 }
 
-export default InformacionProducto
+export default ProductForm
