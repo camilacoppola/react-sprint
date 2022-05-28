@@ -11,7 +11,7 @@ const useIncrementOrDecrement = (initialState) => {
         setIncrementOrDecrement(incrementOrDecrement - 1)
     }
   
-    return [incrementOrDecrement, increment, decrement]
+    return [incrementOrDecrement, increment, decrement,setIncrementOrDecrement]
 }
 
 export default useIncrementOrDecrement

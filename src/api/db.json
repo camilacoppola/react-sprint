@@ -40,8 +40,8 @@
       "valor": "123",
       "descripcion": "buen producto",
       "opcionTienda": "tienda1",
-      "imagen": "https:imagencocacola",
-      "stock": 8,
+      "imagen": "https:imagencocacolayssprite.com.ar",
+      "stock": 11,
       "id": 2
     },
     {
@@ -69,6 +69,41 @@
       "imagen": "asdsd",
       "stock": 1,
       "id": 5
+    },
+    {
+      "nombre": "Fanta",
+      "valor": "500",
+      "descripcion": "Buena Fanta",
+      "opcionTienda": "pescados",
+      "imagen": "fanta.jpg",
+      "stock": 12,
+      "id": 6
+    },
+    {
+      "nombre": "Pepsi",
+      "valor": "200",
+      "descripcion": "Buena Pepsi",
+      "opcionTienda": "pescados",
+      "imagen": "pepsi.jpg",
+      "stock": 1,
+      "id": 7
+    },
+    {
+      "stock": 1,
+      "id": 8
+    },
+    {
+      "valor": "123",
+      "stock": 2,
+      "id": 9
+    },
+    {
+      "nombre": "asdasdas",
+      "imagen": "asdasdas",
+      "valor": "1",
+      "opcionTienda": "mariscos",
+      "stock": 1,
+      "id": 10
     }
   ]
 }

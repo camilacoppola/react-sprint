@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ProductForm from '../../components/Productos/InformacionProducto/ProductForm'
-import useForm from '../../hooks/useForm'
-import useIncrementOrDecrement from '../../hooks/useIncrementOrDecrement'
+import ProductoDescripcion from '../../components/Productos/ProductoDescripcion/ProductoDescripcion'
 import actualizarProducto from '../../utils/actualizarProducto'
-import guardarProducto from '../../utils/guardarProducto'
+import '../Products/ProductoEditAndCreate.css' //deberia estar sobre esta carpeta
 
 const Product = () => {
     const navigate = useNavigate()
@@ -16,30 +15,15 @@ const Product = () => {
         .then(data => setProducto(data))
       }, [])
 
-
-
-
-
-
-    const handleSubmit = (e,producto) => {
-        e.preventDefault()
-        console.log('holaactualizar')
-        //validaciones igual que arriba.
-        /*let productoActualizado = {
-            nombre:"cocacola",
-            valor: 200,
-            descripcion: 'sprite la mejor',
-            opcionTienda: 'pescaderia',
-            imagen: 'no tiene'
-        }*/
+    const handleSubmit = (producto) => {
         actualizarProducto(producto.id,producto)
-        console.log('producto actualizado')
     }
     
   return (
-    <>
+    <main className='ProductoEditAndCreate-contenedor_main'>          
+        <ProductoDescripcion producto={producto}/>   
         <ProductForm producto={producto} handleSubmit={handleSubmit} />
-    </>
+    </main>
   )
 }
 

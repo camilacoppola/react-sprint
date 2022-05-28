@@ -8,15 +8,10 @@ import GaleriaImagenesActuales from '../GaleriaImagenesActuales/GaleriaImagenesA
 import './ProductForm.css'
 
 const ProductForm = ({producto = {},handleSubmit}) => {
-    console.log(producto)
-    
-    
-    
     const [error, setError] = useState({
         estado: false,
         msg: ''
     })
-    
     
     const [form,handleChangeForm,limpiarForm,cambiarCampos] = useForm({
         nombre:'',
@@ -27,27 +22,41 @@ const ProductForm = ({producto = {},handleSubmit}) => {
     })
     
     //const {nombre,valor, descripcion, opcionTienda, imagen} = form
-    //console.log(nombre, ' nombre')
-    const [stock,incrementar,decrementar] = useIncrementOrDecrement(0)
+    const [stock,incrementar,decrementar,setStock] = useIncrementOrDecrement(0)
     
     useEffect(() => {
-      if(producto){
+      if(Object.keys(producto).length !== 0){
+        //let {nombre,valor,descripcion,imagen,opcionTienda} = producto
         cambiarCampos(producto)
+        setStock(producto.stock)
       }
     }, [producto])
 
-
+    const handleProducto = (e) => {
+        e.preventDefault()
+        let {nombre,imagen,valor,opcionTienda} = form
+        if(nombre === '' || imagen === '' || valor === '' || stock === 0 || opcionTienda === ''){
+            setError({estado:true,msg:'No se pueden dejar campos vacios'})
+            return
+        }
+        if(Number(valor) <= 0 || Number(stock) <= 0){
+            setError({estado:true,msg:"No se pueden negativos, ni stock 0"})
+            return
+        }
+        setError({estado:false,msg:''})
+        handleSubmit({...form,stock})
+    }
     
   return (
-    <section>
+    <section className='Producto-contenedor_main'>
                 <h2>Informacion</h2>
                 <div>
                     <label>Nombre</label>
-                    <input placeholder='Nombre' name='nombre' type={"text"} value={form.nombre} onChange={handleChangeForm} />
-  </div>
-                {/*<div>
+                    <input placeholder='Nombre' name='nombre' type={"text"} value={form.nombre || ''} onChange={handleChangeForm} />
+                </div>
+                <div>
                     <label>Valor</label>
-                    <input placeholder='Valor' name='valor' type={"number"} value={valor} onChange={handleChangeForm}/>
+                    <input placeholder='Valor' name='valor' type={"number"} value={form.valor || ''} onChange={handleChangeForm}/>
                 </div>
                 <div className=''>
                     <label>Stock</label>
@@ -59,21 +68,24 @@ const ProductForm = ({producto = {},handleSubmit}) => {
                 </div>
                 <div className="">
                     <label>Descripcion</label>
-                    <input className='InformacionProducto-contenedor_descripcionInput' placeholder='Descripcion' value={descripcion} name="descripcion" onChange={handleChangeForm}/>
+                    <input className='InformacionProducto-contenedor_descripcionInput' placeholder='Descripcion' value={form.descripcion || ''} name="descripcion" onChange={handleChangeForm}/>
                 </div>
                 <div>
                     <label>Tienda</label>
-                    <select name='opcionTienda' value={opcionTienda} onChange={handleChangeForm}>
+                    <select name='opcionTienda' value={form.opcionTienda || ''} onChange={handleChangeForm}>
                         <option value="frutas">Lola Castro Frutas</option>
                         <option value="mariscos">Ultramariscos Lolo Castro</option>
                         <option value="pescados">Pescados El Boquerón</option>
                     </select>
                 </div>
-  <GaleriaImagenesActuales imagen={imagen} handleChangeForm={handleChangeForm}/>*/}
-                <form onSubmit={handleSubmit}>
+                <GaleriaImagenesActuales imagen={form.imagen || ''} handleChangeForm={handleChangeForm}/>
+                <form onSubmit={(e) => handleProducto(e)}>
                     <button>Guardar</button>
                     <button><Link to="/asdsad">Cancelar</Link></button>
-  </form>
+                </form>
+                {
+                    error.estado && <p>{error.msg}</p>
+                }
     </section>
   )
 }
