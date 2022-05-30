@@ -1,3 +1,5 @@
+@import url('../../../pages/Products/ProductoEditAndCreate.css');
+
 .InformacionProducto-contenedor_stockProducto {
     border-radius: 16px;
     border: 1px solid white;
@@ -58,3 +60,17 @@
     min-height: 90vh;
     position: relative;
 }
+
+/* Light mode */
+/* .Producto-contenedor_main.Producto-contenedor_main-modo_claro{
+    background-color: var(--colorBlanco);
+} */
+
+.Producto-contenedor_main.Producto-contenedor_main-modo_claro .InformacionProducto-form_botones button, 
+.Producto-contenedor_main.Producto-contenedor_main-modo_claro .InformacionProducto-form_botones a,
+.Producto-contenedor_main.Producto-contenedor_main-modo_claro .InformacionProducto-contenedor_stockProducto,
+.Producto-contenedor_main.Producto-contenedor_main-modo_claro .InformacionProducto-contenedor_stockProducto button{
+    background-color: var(--colorGris);
+    color: var(--colorNegro);
+}
+

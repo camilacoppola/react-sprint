@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+    margin-top:auto;
 }
 
 .ProductoDescripcion-container_section .ProductoDescripcion-container_columna .container-stock-precio {
@@ -39,7 +40,6 @@
 }
 
 .ProductoDescripcion-container_columna .ProductoDescripcion-container_data {
-
     display: flex;
     flex-direction: column ;
 }
@@ -48,3 +48,6 @@
     align-self: flex-start;
 }
 
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro .ProductoDescripcion-container_section .ProductoDescripcion-container_columna .container-stock-precio div p {
+    color: rgb(0, 0, 0);
+}

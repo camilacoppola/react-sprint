@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { consumeThemeContext } from '../../../contexts/ThemeContext'
 import useForm from '../../../hooks/useForm'
 import useIncrementOrDecrement from '../../../hooks/useIncrementOrDecrement'
 
@@ -49,8 +50,9 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
         handleSubmit({...form,stock})
     }
     
+    const {darkModeTheme} = useContext(consumeThemeContext)
   return (
-    <section className='Producto-contenedor_main'>
+    <section className={darkModeTheme?'Producto-contenedor_main' : 'Producto-contenedor_main Producto-contenedor_main-modo_claro'}>
                 <h2 className="ProductoForm-informacion">Informacion</h2>
                 <div>
                     <label>Nombre</label>

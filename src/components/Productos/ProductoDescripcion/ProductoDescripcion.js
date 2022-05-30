@@ -1,11 +1,13 @@
+import { useContext } from 'react'
+import { consumeThemeContext } from '../../../contexts/ThemeContext'
 import './ProductoDescripcion.css'
 
 const ProductoDescripcion = ({producto}) => {
-
+    const {darkModeTheme} = useContext(consumeThemeContext)
     //const producto=useContext(consumeProducto)
     //console.log(producto)
   return (
-    <section className='ProductoDescripcion-container_section'>
+    <section className={darkModeTheme ? 'ProductoDescripcion-container_section' : 'ProductoDescripcion-container_section ProductoDescripcion-container_section-modo_claro'}>
         <article>
             <img src={producto.imagen} alt={producto.nombre} className="img-producto"/>
         </article>

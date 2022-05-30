@@ -55,3 +55,23 @@
     min-height: 150px;
 }
 
+
+/* DarkMode */
+.ProductoEditAndCreate-modo_claro{
+    background-color: var(--colorBlanco);
+}
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro h2, 
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro label, 
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro p, 
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro span,
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro h3{
+    color: var(--colorNegro);
+}
+
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro input, 
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro select,
+.ProductoEditAndCreate-contenedor_main.ProductoEditAndCreate-modo_claro textarea{
+    background-color: var(--colorGris);
+    color: var(--colorNegro);
+}
+
