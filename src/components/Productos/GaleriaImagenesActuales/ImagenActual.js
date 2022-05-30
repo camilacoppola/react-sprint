@@ -1,9 +1,17 @@
 import React from 'react'
 import './ImagenActual.css'
-const ImagenesActuales = ({imagen = [], indice}) => {
+const ImagenesActuales = ({imagen = [], indice, setProducto}) => {
 
   const cortarUrl = (url) => {
     return url.slice(0,21)
+  }
+
+  const handleQuitarProducto = () => {
+    console.log(indice)
+    setProducto(prevProducto => ({
+      ...prevProducto,
+      imagenes:prevProducto.imagenes.filter((img,index) => index !== indice )
+    }))
   }
 
   return (
@@ -13,7 +21,7 @@ const ImagenesActuales = ({imagen = [], indice}) => {
           <p>{cortarUrl(imagen)}</p>
         </div>
         <div className='ImagenActual-container_button'>
-          <button>Quitar</button>
+          <button onClick={handleQuitarProducto}>Quitar</button>
         </div>
     </div>
   )

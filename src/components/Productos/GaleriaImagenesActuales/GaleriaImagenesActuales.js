@@ -2,7 +2,7 @@ import React from 'react'
 import useForm from '../../../hooks/useForm'
 import ImagenesActuales from './ImagenActual'
 
-const GaleriaImagenesActuales = ({imagen,handleChangeForm,mostrar,imagenes}) => {
+const GaleriaImagenesActuales = ({imagen,handleChangeForm,mostrar,imagenes,setProducto}) => {
   return (
     <section>
             <h2 className="ProductoForm-informacion">Galeria de imagenes</h2>
@@ -19,7 +19,7 @@ const GaleriaImagenesActuales = ({imagen,handleChangeForm,mostrar,imagenes}) => 
                   
                   (imagenes.length > 0) &&
                   imagenes.map((img,index) =>
-                    <ImagenesActuales imagen={img} key={index} indice={index}/> 
+                    <ImagenesActuales setProducto={setProducto} imagen={img} key={index} indice={index}/> 
                   )
                 }
             </div>

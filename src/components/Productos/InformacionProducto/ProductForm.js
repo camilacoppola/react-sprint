@@ -6,7 +6,7 @@ import useIncrementOrDecrement from '../../../hooks/useIncrementOrDecrement'
 import GaleriaImagenesActuales from '../GaleriaImagenesActuales/GaleriaImagenesActuales'
 import './ProductForm.css'
 
-const ProductForm = ({producto = {},handleSubmit}) => {
+const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
     const [error, setError] = useState({
         estado: false,
         msg: ''
@@ -78,7 +78,7 @@ const ProductForm = ({producto = {},handleSubmit}) => {
                         <option value="pescados">Pescados El Boquerón</option>
                     </select>
                 </div>
-                <GaleriaImagenesActuales imagen={form.imagen || ''} imagenes={producto.imagenes} handleChangeForm={handleChangeForm} mostrar={Object.keys(producto).length > 0?true:false}/>
+                <GaleriaImagenesActuales setProducto={setProducto} imagen={form.imagen || ''} imagenes={producto.imagenes} handleChangeForm={handleChangeForm} mostrar={Object.keys(producto).length > 0?true:false}/>
                 <form onSubmit={(e) => handleProducto(e)} className="InformacionProducto-form_botones">
                     <button><Link to="/asdsad">Cancelar</Link></button>
                     <button>Guardar</button>

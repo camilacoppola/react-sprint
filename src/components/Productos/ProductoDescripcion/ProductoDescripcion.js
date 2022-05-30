@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { consumeProducto } from '../../../context/product'
 import './ProductoDescripcion.css'
 
 const ProductoDescripcion = ({producto}) => {
+
+    //const producto=useContext(consumeProducto)
+    //console.log(producto)
   return (
     <section className='ProductoDescripcion-container_section'>
         <article>
