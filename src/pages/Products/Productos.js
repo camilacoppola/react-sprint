@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import ProductoDescripcion from '../../components/Productos/ProductoDescripcion/ProductoDescripcion'
+import ProductsList from '../../components/ProductsList/ProductsList'
 
-//import './Producto.css'
-import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
-import ProductForm from '../../components/Productos/InformacionProducto/ProductForm'
+import './Products.css'
 
 
 const Productos = () => {
   
+  const [productos, setProductos] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/products")
+    .then(resp => resp.json())
+    .then(data => setProductos(data))
+  }, [])
+  
+  
   return (
     <>
       {/*Header Productos > #id                   Boton eliminar*/}
-      <main className='Producto-contenedor_main'>
-          {/*renderizar products ListProducts */ }
+      <main className='Products-contenedor_main'>
+          <ProductsList productos={productos} />
       </main>
     </>
   )

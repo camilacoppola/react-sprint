@@ -25,10 +25,12 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
     
     useEffect(() => {
       if(Object.keys(producto).length !== 0){
+          console.log("dentro del if: ",producto)
         //let {nombre,valor,descripcion,imagen,opcionTienda} = producto
         cambiarCampos(producto)
         setStock(producto.stock)
       }
+      console.log("fuera del if: ",producto)
     }, [producto])
 
     const handleProducto = (e) => {
@@ -73,6 +75,7 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
                 <div>
                     <label>Tienda</label>
                     <select name='opcionTienda' value={form.opcionTienda || ''} onChange={handleChangeForm}>
+                        <option disabled  hidden value={""}>Select</option>
                         <option value="frutas">Lola Castro Frutas</option>
                         <option value="mariscos">Ultramariscos Lolo Castro</option>
                         <option value="pescados">Pescados El Boquerón</option>

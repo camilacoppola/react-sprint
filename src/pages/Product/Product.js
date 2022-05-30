@@ -39,7 +39,7 @@ const Product = () => {
             Object.keys(producto).length > 0 &&
             <>
               <ProductoDescripcion producto={producto}/>                   
-              <ProductForm producto={producto} handleSubmit={handleSubmit}  /> 
+              <ProductForm producto={producto} handleSubmit={handleSubmit} setProducto={setProducto} /> 
             </>
           }
         </main>
