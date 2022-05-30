@@ -34,3 +34,12 @@
 
     }
 }
+
+.Header-modo_claro{
+    color: black;
+    background-color: var(--colorGris);
+}
+
+.Header-modo_claro .Header-button_hide-image{
+    filter: invert(0);
+}

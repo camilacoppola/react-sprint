@@ -2,6 +2,25 @@
     --grisT2: #595959;
     --grisT2Selected: #343434;
     --negroT1: #222222;
-
+    --colorBlanco: #FFFFFF;
     --grisT1: #2b2b2b;
+
+    --colorGris:#efefef;
+    --colorGrisOscuro:#494f51;
+    --colorVerdeSelected: #0a8a72;
+    --colorVerde: #0cb093;
+    --colorBlanco: #ffffff;
+    --colorNegro: #000000;
+    --colorRojo: #ff0000;
+    --colorNegroClaro: rgba(51, 51, 51, 1);
+    --colorBlancoTarjetas: #ffffff;
+    --colorBlancoNav:  #ffffff;
+    --colorNegroPuntos: #000000;
+    --colorGrisCarrito: #494f51;
+    --colorBlancoUsuario:#ffffff;
+    --colorGrisIconos: #999999;
+    --colorTitulo: #000000;
+    --colorGrisOscuroLetras:#494f51;
+    --colorBlancoHeader: #ffffff;
+    --colorBlancoBuscador:#ffffff;
 }

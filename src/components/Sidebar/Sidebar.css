@@ -10,6 +10,7 @@
 }
 
 .Sidebar-nav-link.active{
+    cursor: default;
     background-color: var(--grisT2);
 }
 
@@ -61,6 +62,7 @@
     display: flex;
     gap: 0.2rem;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .Sidebar-nav-link{
@@ -99,5 +101,94 @@
         padding: 0 1rem;
         background-color: var(--negroT1);
         backdrop-filter: blur(0px);
+    }
+}
+
+.Sidebar-Boton_modo_claro{
+    display: flex;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: var(--colorVerde);
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    color: black;
+}
+
+.Sidebar-Boton_modo_oscuro{
+    cursor: pointer;
+    display: flex;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: var(--grisT1);
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+}
+
+.Sidebar-Boton_modo_oscuro:hover{
+    background-color: var(--grisT2Selected);
+}
+
+.Sidebar-Boton_modo_claro:hover{
+    background-color: rgb(155, 155, 155);
+}
+
+.Sidebar_boton_theme_icon{
+    width: 1rem;
+    object-fit: contain;
+    margin: 0 0.5rem;
+    filter: invert(1);
+}
+
+.boton_theme_oscuro{
+    filter: invert(0);
+}
+
+.Sidebar-modo_claro{
+    background-color: rgba(239, 239, 239, 0.8);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-container-user{
+    color: black;
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-nav-link{
+    color: black;
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-nav-link .Sidebar-nav-link-icon{
+    filter: invert(0)
+}
+
+.Sidebar.Sidebar-modo_claro .active{
+    background-color: var(--colorVerde);
+}
+
+
+.Sidebar.Sidebar-modo_claro .Sidebar-Boton_modo_oscuro:hover{
+    background-color: var(--grisT2Selected);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-Boton_modo_claro:hover{
+    background-color: var(--colorVerdeSelected);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-container-user{
+    background-color: var(--colorVerde);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-container-user:hover{
+    background-color: var(--colorVerdeSelected);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-nav-link:hover{
+    background-color: var(--colorVerdeSelected);
+}
+
+@media screen and (min-width: 1024px) {
+    .Sidebar-modo_claro{
+        background-color: var(--colorGris);
     }
 }

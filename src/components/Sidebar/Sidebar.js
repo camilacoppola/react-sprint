@@ -2,8 +2,12 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
 import { consumeMenuContext } from '../../contexts/MenuContext'
+import { consumeThemeContext } from '../../contexts/ThemeContext'
+import Button from '../Button/Button'
 
 const Sidebar = () => {
+
+  const {darkModeTheme, toggleTheme} = useContext(consumeThemeContext)
 
   const {menuVisibility, changeMenuVisibility}  = useContext(consumeMenuContext)
 
@@ -26,8 +30,18 @@ const Sidebar = () => {
 
   const sidebar = useRef();
 
+  let nameDeClaseSidebar = 'Sidebar'
+
+  if(menuVisibilidad){
+    nameDeClaseSidebar = 'Sidebar Sidebar-showed';
+  }
+  
+  if(!darkModeTheme){
+    nameDeClaseSidebar += ' Sidebar-modo_claro'
+  }
+
   return (
-    <aside ref={sidebar} className={menuVisibilidad ? 'Sidebar Sidebar-showed' : 'Sidebar'}>
+    <aside ref={sidebar} className={nameDeClaseSidebar}>
       <img className='Sidebar-logo' src='/icons/MiEcommerce.svg' alt='Logo de Ecommerce'></img>
         <nav>
           <ul className='Sidebar-nav'>
@@ -45,6 +59,10 @@ const Sidebar = () => {
               </li>
           </ul>
         </nav>
+        {darkModeTheme?
+        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_oscuro'><img className='Sidebar_boton_theme_icon' src="./icons/light_mode.svg"/> Cambiar a modo claro</button>) :
+        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_claro'><img className='Sidebar_boton_theme_icon boton_theme_oscuro' src="./icons/dark_mode.svg"/> Cambiar a modo oscuro </button>)
+        }
         <div className='Sidebar-container-user'>
           <img className='Sidebar-container-user-image' src='/photos/foto_user_perfil.jpg' alt='Foto de perfil de usuario'></img>
           <p className='Sidebar-container-user-text'>Nombre usuario</p>

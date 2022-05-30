@@ -1,12 +1,19 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react';
 
 export const consumeThemeContext = createContext();
 
 const ThemeContext = ({children}) => {
-    const [darkModeTheme, setTheme] = useState(false);
+
+    let modoOscuro = localStorage.getItem('modoOscuro');
+    if (modoOscuro === undefined || modoOscuro === null){
+        localStorage.setItem('modoOscuro', false);
+        modoOscuro = false;
+    }
+
+    const [darkModeTheme, setTheme] = useState(modoOscuro);
 
     const toggleTheme = () => {
-        setTheme(!darkModeTheme)
+        setTheme(!darkModeTheme);
     }
 
     return (
@@ -16,4 +23,4 @@ const ThemeContext = ({children}) => {
     )
 }
 
-export default ThemeContext
+export default ThemeContext;
