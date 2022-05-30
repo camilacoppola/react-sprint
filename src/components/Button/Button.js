@@ -13,10 +13,10 @@ const Button = ({tipoButton, textoDescripcion, linkTo, claseBoton}) => {
             botonAElegir = (<button className= 'Button-button2'>{textoDescripcion}</button>)
             break;
         case "tipoLink1": 
-            botonAElegir = <Link to={linkTo} className={'Button-link1 ' + claseBoton}>{textoDescripcion}</Link>
+            botonAElegir = <Link to={linkTo} className={'Button-link1 ' + (claseBoton?claseBoton:'') }>{textoDescripcion}</Link>
             break;
         case "tipoLink2":
-            botonAElegir = <Link to={linkTo} className={'Button-link2 ' + claseBoton}>{textoDescripcion}</Link>
+            botonAElegir = <Link to={linkTo} className={'Button-link2 ' + (claseBoton?claseBoton:'')}>{textoDescripcion}</Link>
             break;
         default : 
             throw 'Tipo de boton incorrecto'

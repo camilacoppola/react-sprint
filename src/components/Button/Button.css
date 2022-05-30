@@ -1,7 +1,26 @@
-.Button-button1{   
+@import url("../../generalCSS/colors.css");
+
+.Button-button1{
     border-radius: 3rem;
     border: solid var(--grisT2) 1px;
     padding: 0.3rem 0.5rem;
     max-height: 2rem;
     color: white;
+}
+
+.Button-button1:hover{
+    background-color: var(--colorVerde);
+}
+
+.Button-link1{
+    border-radius: 3rem;
+    border: solid var(--grisT2) 1px;
+    padding: 0.3rem 0.5rem;
+    max-height: 2rem;
+    background-color: var(--grisT2);
+    color: white;
+}
+
+.Button-link1:hover{
+    background-color: var(--grisT2Selected);
 }
