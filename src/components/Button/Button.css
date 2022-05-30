@@ -1,0 +1,7 @@
+.Button-button1{   
+    border-radius: 3rem;
+    border: solid var(--grisT2) 1px;
+    padding: 0.3rem 0.5rem;
+    max-height: 2rem;
+    color: white;
+}

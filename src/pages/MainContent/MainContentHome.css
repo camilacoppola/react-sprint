@@ -1,5 +1,7 @@
+@import url('../../generalCSS/colors.css');
+
 body{
-    background-color: black;
+    background-color: var(--negroT1);
 }
 .Home-contenedor_home{
     display: flex;
@@ -11,7 +13,7 @@ body{
 .Home-productos_home, .Home-tiendas_home{
     display: flex;
     justify-content: space-between;
-    background-color: #222222;
+    background-color: var(--grisT1);
     border-radius: 1rem;
     padding: 0.5rem 1rem;
     box-shadow: 0px 4px 4px 0px #00000040;
@@ -22,17 +24,6 @@ body{
     display: flex;
     align-items: center;
 }
-
-.Home-button_home {
-    margin-right: 5px;
-    border-radius: 15px;
-    border: none;
-    padding: 0.5rem;
-    background-color: #494f51;
-    color: white;
-    cursor: pointer;
-}
-
 .Home-logoProductsTienda_home{
     filter: invert(100%);
     margin-right: 0.5rem;

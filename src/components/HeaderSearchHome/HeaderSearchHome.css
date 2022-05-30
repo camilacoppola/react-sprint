@@ -1,0 +1,52 @@
+@import url('../../generalCSS/colors.css');
+.hsh-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hsh-containerBuscador{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.hsh-containerInput{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hsh-iconoBuscador{
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+    filter: invert(50%);
+}
+.hsh-iconoBoton{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+    position: absolute;
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+.hsh-iconoBoton:focus{
+    background-color: var(--grisT2);
+    
+}
+
+.hsh-input{
+    width: 100%;
+    align-self: stretch;
+    padding-right: 1rem;
+    background-color: var(--grisT1);
+    border-radius: 16px;
+    padding: 0.3rem 2rem 0.3rem 1rem;
+    border: solid var(--grisT2) 1px;
+
+}

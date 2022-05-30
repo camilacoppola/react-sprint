@@ -5,6 +5,8 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import MenuContext from '../../contexts/MenuContext'
 import './Home.css'
 import MainContentHome from '../MainContent/MainContentHome';
+import SearchProducts from '../../components/Buscador/SearchProducts'
+import HeaderSearchHome from '../../components/HeaderSearchHome/HeaderSearchHome'
 
 const Home = () => {
   return (
@@ -12,8 +14,10 @@ const Home = () => {
       <div className='containerBody'>
         <Sidebar />
         <MainContent>
-          <Header />
-          <MainContentHome/>
+          <Header>
+              <HeaderSearchHome/>
+          </Header>
+          {/* <MainContentHome/> */}
         </MainContent>
       </div>
     </MenuContext>

@@ -14,7 +14,6 @@ const MainRoutes = () => {
             <Route path="*" element={<h1>Error 404: Pagina no encontrada</h1>}/>
             <Route path="/stores"  element={<ErrorStore/>}/>
             <Route path="/stores/new" element={<ErrorStore/>}/>
-
         </Routes>
     )
 }
