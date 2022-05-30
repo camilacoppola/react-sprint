@@ -1,0 +1,10 @@
+.Button-link1{
+    margin-right: 5px;
+    border-radius: 15px;
+    border: none;
+    background-color: #494f51;
+    color: white;
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 12px;
+}

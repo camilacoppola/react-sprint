@@ -8,7 +8,7 @@ const Header = ({children, styleHeader}) => {
   const {toggleMenu} = useContext(consumeMenuContext)
 
   return (
-    <header style={styleHeader} className='Header'>
+    <header className='Header'>
         <button className='Header-button_hide' onClick={toggleMenu}>
           <img className='Header-button_hide-image' src='/icons/menu.svg' alt='Icono menu'/>
         </button>
