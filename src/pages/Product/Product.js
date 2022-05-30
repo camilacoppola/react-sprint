@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ProductForm from '../../components/Productos/InformacionProducto/ProductForm'
 import ProductoDescripcion from '../../components/Productos/ProductoDescripcion/ProductoDescripcion'
-import ProductoContext, { consumeProducto } from '../../context/product'
 import actualizarProducto from '../../utils/actualizarProducto'
 import borrarProducto from '../../utils/borrarProducto'
 import '../Products/ProductoEditAndCreate.css' //deberia estar sobre esta carpeta
@@ -34,7 +33,7 @@ const Product = () => {
       {/*<Header handleDelete={handleDelete}/>*/} 
       {/*Hacer un contexto desde aca para el renderizado al tocar el boton quitar de lo productos. */}
       {/* <ProductoContext> */}
-        <main className='ProductoEditAndCreate-contenedor_main'>  
+        <main className='ProductoEditAndCreate-contenedor_main' style={{"overflow-y":"scroll"}}>  
           {
             Object.keys(producto).length > 0 &&
             <>

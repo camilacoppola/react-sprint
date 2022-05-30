@@ -26,6 +26,10 @@
     margin-bottom: 10px;
 }
 
+.GaleriaImagenes-container{
+    margin-bottom: 4rem;
+}
+
 .InformacionProducto-form_botones button{
     background-color: rgb(87, 92, 94);
     border:none;
@@ -48,4 +52,9 @@
 .Producto-contenedor_main .ProductoForm-informacion {
     margin-top: 20px;
     font-weight: 400;
+}
+
+.Producto-contenedor_main {
+    min-height: 90vh;
+    position: relative;
 }

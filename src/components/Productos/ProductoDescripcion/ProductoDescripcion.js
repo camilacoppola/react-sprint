@@ -1,5 +1,3 @@
-import React, { useContext } from 'react'
-import { consumeProducto } from '../../../context/product'
 import './ProductoDescripcion.css'
 
 const ProductoDescripcion = ({producto}) => {

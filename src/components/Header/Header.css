@@ -7,11 +7,13 @@
     min-height: 10vh;
     display: flex;
     align-items: center;
-    padding: 0.5rem;
+    padding: 1rem;
+    color: white;
 }
 
 .Header-button_hide{
     padding: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .Header-button_hide:hover{
@@ -29,5 +31,6 @@
 @media screen and (min-width: 1024px) {
     .Header-button_hide{
         display: none;
+
     }
 }

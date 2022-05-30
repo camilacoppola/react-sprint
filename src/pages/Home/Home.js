@@ -7,7 +7,7 @@ import HeaderSearchHome from '../../components/HeaderSearchHome/HeaderSearchHome
 const Home = () => {
   return (
     <PlantillaPagina>
-      <HeaderSearchHome />
+        <h1>Hola Olivia!</h1>
       <MainContentHome />
     </PlantillaPagina>
   )

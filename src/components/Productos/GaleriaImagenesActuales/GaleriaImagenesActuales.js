@@ -4,7 +4,7 @@ import ImagenesActuales from './ImagenActual'
 
 const GaleriaImagenesActuales = ({imagen,handleChangeForm,mostrar,imagenes,setProducto}) => {
   return (
-    <section>
+    <section className='GaleriaImagenes-container'>
             <h2 className="ProductoForm-informacion">Galeria de imagenes</h2>
             <div>
                 <label>Nueva Imagen</label>

@@ -28,7 +28,7 @@
 .Sidebar-container-user{
     position: absolute;
     bottom: 0;
-    width: calc(100% - 0.9rem);
+    width: calc(100% - 1.9rem);
     padding: 0.2rem;
     display: flex;
     color: white;
@@ -46,7 +46,7 @@
 
 .Sidebar-showed{
     width: 296px;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     display: block;
 }
 
@@ -96,7 +96,7 @@
         width: 296px;
         display: block;
         position: relative;
-        padding: 0 0.5rem;
+        padding: 0 1rem;
         background-color: var(--negroT1);
         backdrop-filter: blur(0px);
     }

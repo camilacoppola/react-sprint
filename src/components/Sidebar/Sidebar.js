@@ -5,7 +5,7 @@ import { consumeMenuContext } from '../../contexts/MenuContext'
 
 const Sidebar = () => {
 
-  const {menuVisibility}  = useContext(consumeMenuContext)
+  const {menuVisibility, changeMenuVisibility}  = useContext(consumeMenuContext)
 
   const [menuVisibilidad, setMenuVisibilidad] = useState(menuVisibility)
 
@@ -16,8 +16,9 @@ const Sidebar = () => {
   useEffect(() =>{
     if(menuVisibility){
       document.addEventListener('click', (e) =>{
-        if(!sidebar.current.contains(e.target)){
+        if(sidebar.current.classList.contains("Sidebar-showed") && !sidebar.current.contains(e.target)){
           sidebar.current.classList.remove('Sidebar-showed')
+          changeMenuVisibility(false)
         }
       })
     }
@@ -45,7 +46,7 @@ const Sidebar = () => {
           </ul>
         </nav>
         <div className='Sidebar-container-user'>
-          <img className='Sidebar-container-user-image' src='./photos/foto_user_perfil.jpg' alt='Foto de perfil de usuario'></img>
+          <img className='Sidebar-container-user-image' src='/photos/foto_user_perfil.jpg' alt='Foto de perfil de usuario'></img>
           <p className='Sidebar-container-user-text'>Nombre usuario</p>
         </div>
     </aside>

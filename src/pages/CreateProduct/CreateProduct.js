@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductForm from '../../components/Productos/InformacionProducto/ProductForm'
+import { consumeThemeContext } from '../../contexts/ThemeContext'
 import guardarProducto from '../../utils/guardarProducto'
 import '../Products/ProductoEditAndCreate.css'
 const CreateProduct = () => {
     const navigate = useNavigate()
 
     const handleSubmit = async(producto) => {
-        console.log(producto)
         producto.imagenes = [producto.imagen]
         await guardarProducto({
             ...producto
@@ -15,11 +15,12 @@ const CreateProduct = () => {
         navigate('/products')
     }
 
-
+    const {darkModeTheme} = useContext(consumeThemeContext)
+    console.log(darkModeTheme)
 
 
     return (
-        <main className='ProductoEditAndCreate-contenedor_main'>
+        <main className={!darkModeTheme?'ProductoEditAndCreate-contenedor_main lightmode':'ProductoEditAndCreate-contenedor_main' }>
             <ProductForm handleSubmit={handleSubmit}/>
         </main>
       )
