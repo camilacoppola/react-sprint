@@ -11,8 +11,8 @@ const PlantillaPagina = ({children}) => {
       <div className='containerBody'>
         <Sidebar />
         <MainContent>
-          <Header />
-          {children}
+          <Header>{children[0]}</Header>
+          {children[1]}
         </MainContent>
       </div>
     </MenuContext>

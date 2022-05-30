@@ -5,7 +5,8 @@ import './Home.css'
 const Home = () => {
   return (
     <PlantillaPagina>
-      
+      <div>Header</div>
+      <div>Main</div>
     </PlantillaPagina>
   )
 }
