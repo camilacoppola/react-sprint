@@ -7,6 +7,7 @@ const CreateProduct = () => {
     const navigate = useNavigate()
 
     const handleSubmit = async(producto) => {
+        producto.imagenes = [producto.imagen]
         await guardarProducto({
             ...producto
         })

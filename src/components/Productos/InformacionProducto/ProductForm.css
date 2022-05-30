@@ -19,3 +19,33 @@
     color: white;
 }
 
+.InformacionProducto-form_botones{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.InformacionProducto-form_botones button{
+    background-color: rgb(87, 92, 94);
+    border:none;
+    border-radius: 16px;
+    color: white;
+    padding: 6px;
+    margin-right: 10px;
+    width: 70px;
+}
+
+.InformacionProducto-form_botones a {
+    text-decoration: none;
+    color: white;
+}
+
+.Producto-contenedor_main label {
+    margin-top: 10px;
+}
+
+.Producto-contenedor_main .ProductoForm-informacion {
+    margin-top: 20px;
+    font-weight: 400;
+}

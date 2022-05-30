@@ -1,0 +1,27 @@
+.ImagenActual-container_imagen {
+    border: 1px solid black;
+    width: 400px;
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    padding: 10px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.ImagenActual-container_button button{
+    background-color: rgb(87, 92, 94);
+    border:none;
+    border-radius: 16px;
+    color: white;
+    padding: 10px;
+    margin-right: 10px;
+    width: 70px;
+}
+
+.ImagenActual-container_imagen > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

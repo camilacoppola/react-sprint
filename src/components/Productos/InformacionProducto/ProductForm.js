@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useForm from '../../../hooks/useForm'
 import useIncrementOrDecrement from '../../../hooks/useIncrementOrDecrement'
-import actualizarProducto from '../../../utils/actualizarProducto'
 
 import GaleriaImagenesActuales from '../GaleriaImagenesActuales/GaleriaImagenesActuales'
 import './ProductForm.css'
@@ -44,12 +43,13 @@ const ProductForm = ({producto = {},handleSubmit}) => {
             return
         }
         setError({estado:false,msg:''})
+        console.log("first")
         handleSubmit({...form,stock})
     }
     
   return (
     <section className='Producto-contenedor_main'>
-                <h2>Informacion</h2>
+                <h2 className="ProductoForm-informacion">Informacion</h2>
                 <div>
                     <label>Nombre</label>
                     <input placeholder='Nombre' name='nombre' type={"text"} value={form.nombre || ''} onChange={handleChangeForm} />
@@ -68,7 +68,7 @@ const ProductForm = ({producto = {},handleSubmit}) => {
                 </div>
                 <div className="">
                     <label>Descripcion</label>
-                    <input className='InformacionProducto-contenedor_descripcionInput' placeholder='Descripcion' value={form.descripcion || ''} name="descripcion" onChange={handleChangeForm}/>
+                    <textarea className='InformacionProducto-contenedor_descripcionInput' placeholder='Descripcion' value={form.descripcion || ''} name="descripcion" onChange={handleChangeForm}></textarea>
                 </div>
                 <div>
                     <label>Tienda</label>
@@ -78,10 +78,10 @@ const ProductForm = ({producto = {},handleSubmit}) => {
                         <option value="pescados">Pescados El Boquerón</option>
                     </select>
                 </div>
-                <GaleriaImagenesActuales imagen={form.imagen || ''} handleChangeForm={handleChangeForm}/>
-                <form onSubmit={(e) => handleProducto(e)}>
-                    <button>Guardar</button>
+                <GaleriaImagenesActuales imagen={form.imagen || ''} imagenes={producto.imagenes} handleChangeForm={handleChangeForm} mostrar={Object.keys(producto).length > 0?true:false}/>
+                <form onSubmit={(e) => handleProducto(e)} className="InformacionProducto-form_botones">
                     <button><Link to="/asdsad">Cancelar</Link></button>
+                    <button>Guardar</button>
                 </form>
                 {
                     error.estado && <p>{error.msg}</p>

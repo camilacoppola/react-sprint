@@ -1,19 +1,30 @@
 import React from 'react'
 import useForm from '../../../hooks/useForm'
+import ImagenesActuales from './ImagenActual'
 
-const GaleriaImagenesActuales = ({imagen,handleChangeForm}) => {
-
-
+const GaleriaImagenesActuales = ({imagen,handleChangeForm,mostrar,imagenes}) => {
   return (
     <section>
-            <h2>Galeria de imagenes</h2>
+            <h2 className="ProductoForm-informacion">Galeria de imagenes</h2>
             <div>
                 <label>Nueva Imagen</label>
-                <input placeholder='url imagen' name='imagen' type={"text"} value={imagen} onChange={handleChangeForm} />
+                <input placeholder='url imagen' name='imagen' type={"text"} value={imagen || ''} onChange={handleChangeForm} />
             </div>
+            {
+              mostrar &&
+
             <div>
-                {/*<ImagenesActuales /> iterar sobre el context de las iamgenes o de donde vnegna de la api */}
+                <label>Imagenes actuales</label>
+                {
+                  
+                  (imagenes.length > 0) &&
+                  imagenes.map((img,index) =>
+                    <ImagenesActuales imagen={img} key={index} indice={index}/> 
+                  )
+                }
             </div>
+
+            }
     </section>
   )
 }
