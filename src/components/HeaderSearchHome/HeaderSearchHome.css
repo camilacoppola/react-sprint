@@ -1,4 +1,5 @@
-@import url('../../generalCSS/colors.css');
+@import url("../../generalCSS/colors.css");
+
 .hsh-container{
     width: 100%;
     display: flex;
@@ -34,10 +35,7 @@
     position: absolute;
     padding: 0.3rem;
     border-radius: 50%;
-}
-.hsh-iconoBoton:focus{
-    background-color: var(--grisT2);
-    
+    margin-right: 0.3rem;
 }
 
 .hsh-input{
@@ -50,3 +48,20 @@
     border: solid var(--grisT2) 1px;
 
 }
+
+.hsh-container.hsh-modo_claro .hsh-input{
+    background-color: var(--colorBlanco);
+}
+
+.hsh-container.hsh-modo_claro .hsh-input:focus{
+    outline: solid 2px var(--colorVerde);
+}
+
+.hsh-container.hsh-modo_claro .hsh-container-agregar_producto{
+    background-color: var(--colorVerde);
+}
+
+.hsh-container.hsh-modo_claro .hsh-container-agregar_producto:hover{
+    background-color: var(--colorVerdeSelected);
+}
+

@@ -4,6 +4,7 @@ import CardProducto from './CardProducto/CardProducto'
 import './ProductsList.css'
 
 const ProductsList = ({productos}) => {
+  
   return (
     <section className='ProductList-contenedor_section'>
             {

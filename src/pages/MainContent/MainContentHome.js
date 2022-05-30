@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './MainContentHome.css'
 import logoProducts from '../../assets/img/package-variant-closed.svg'
 import logoTiendas from '../../assets/img/store.svg'
 import Button from '../../components/Button/Button';
+import { consumeThemeContext } from '../../contexts/ThemeContext';
 
 const MainContentHome = () => {
+    const {darkModeTheme} = useContext(consumeThemeContext)
+
   return (
-    <div className='Home-contenedor_home'>
+    <div className={darkModeTheme? 'Home-contenedor_home': 'Home-contenedor_home Home-modo_claro'}>
         <div className='Home-productos_home'>
             <div className='Home-imgDescripcion_home'>
                 <img className='Home-logoProductsTienda_home'src={logoProducts} alt="Logo productos" />

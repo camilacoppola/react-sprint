@@ -21,6 +21,7 @@ const Product = () => {
     const handleSubmit = (producto) => {
         producto.imagenes = [...producto.imagenes, producto.imagen]
         actualizarProducto(producto.id,producto)
+        navigate('/products')
     }
 
     const handleDelete = () => {
@@ -33,7 +34,7 @@ const Product = () => {
       {/*<Header handleDelete={handleDelete}/>*/} 
       {/*Hacer un contexto desde aca para el renderizado al tocar el boton quitar de lo productos. */}
       {/* <ProductoContext> */}
-        <main className='ProductoEditAndCreate-contenedor_main' style={{"overflow-y":"scroll"}}>  
+        <main className='ProductoEditAndCreate-contenedor_main' style={{overflow:"scroll"}}>  
           {
             Object.keys(producto).length > 0 &&
             <>

@@ -7,11 +7,11 @@ import ThemeContext from './contexts/ThemeContext';
 import './generalCSS/reset.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <ThemeContext>
+    <ThemeContext>
+        <BrowserRouter>
             <App />
-        </ThemeContext>
-    </BrowserRouter>
+        </BrowserRouter>
+    </ThemeContext>
 );
 
 

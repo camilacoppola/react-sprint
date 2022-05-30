@@ -1,3 +1,5 @@
+@import url('../../../generalCSS/colors.css');
+
 .CardProducto-container_flechita img {
     width: 20px;
     height: 20px;
@@ -23,11 +25,17 @@
     text-transform: capitalize;
 }
 
-
-
 .CardProducto-container_imagenProducto > img {
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.CardProducto-container_article.CardProducto-container_article-modo_claro{
+    background-color: var(--colorBlancoTarjetas);
+}
+
+.CardProducto-container_article.CardProducto-container_article-modo_claro .CardProducto-container_flechita img {
+    filter: invert(0);
 }

@@ -1,18 +1,25 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import useLocalStorageGet from '../hooks/useLocalStorageGet';
 
 export const consumeThemeContext = createContext();
 
 const ThemeContext = ({children}) => {
 
-    let modoOscuro = localStorage.getItem('modoOscuro');
-    if (modoOscuro === undefined || modoOscuro === null){
-        localStorage.setItem('modoOscuro', false);
-        modoOscuro = false;
-    }
+    const [value] = useLocalStorageGet('modoOscuro');
+    const [darkModeTheme, setTheme] = useState();
 
-    const [darkModeTheme, setTheme] = useState(modoOscuro);
+    useEffect(() =>{
+        if(value === null){
+            localStorage.setItem('modoOscuro', false);
+            setTheme(false);
+        }else{
+            console.log()
+            setTheme(value);
+        }
+    }, [])
 
     const toggleTheme = () => {
+        localStorage.setItem('modoOscuro', !darkModeTheme);
         setTheme(!darkModeTheme);
     }
 

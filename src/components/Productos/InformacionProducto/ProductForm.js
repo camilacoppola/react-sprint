@@ -83,7 +83,7 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
                 </div>
                 <GaleriaImagenesActuales setProducto={setProducto} imagen={form.imagen || ''} imagenes={producto.imagenes} handleChangeForm={handleChangeForm} mostrar={Object.keys(producto).length > 0?true:false}/>
                 <form onSubmit={(e) => handleProducto(e)} className="InformacionProducto-form_botones">
-                    <button><Link to="/asdsad">Cancelar</Link></button>
+                    <button><Link to="/products">Cancelar</Link></button>
                     <button>Guardar</button>
                 </form>
                 {

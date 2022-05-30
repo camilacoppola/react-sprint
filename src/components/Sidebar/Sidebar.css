@@ -105,6 +105,7 @@
 }
 
 .Sidebar-Boton_modo_claro{
+    cursor: pointer;
     display: flex;
     padding: 0.5rem;
     width: 100%;
@@ -185,6 +186,10 @@
 
 .Sidebar.Sidebar-modo_claro .Sidebar-nav-link:hover{
     background-color: var(--colorVerdeSelected);
+}
+
+.Sidebar.Sidebar-modo_claro .Sidebar-nav-link.active:hover{
+    background-color: var(--colorVerde);
 }
 
 @media screen and (min-width: 1024px) {

@@ -1,24 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProductsList from '../../components/ProductsList/ProductsList'
-
+import { productContext } from '../../contexts/ProductosContext'
 import './Products.css'
-
+import {consumeThemeContext} from '../../contexts/ThemeContext'
 
 const Productos = () => {
   
-  const [productos, setProductos] = useState([])
+ const {productos} = useContext(productContext)
+ const {darkModeTheme} = useContext(consumeThemeContext)
 
-  useEffect(() => {
-    fetch("http://localhost:3001/products")
-    .then(resp => resp.json())
-    .then(data => setProductos(data))
-  }, [])
-  
-  
   return (
     <>
-      {/*Header Productos > #id                   Boton eliminar*/}
-      <main className='Products-contenedor_main'>
+      <main className={darkModeTheme?'Products-contenedor_main':'Products-contenedor_main Products-modo_claro'}>
           <ProductsList productos={productos} />
       </main>
     </>

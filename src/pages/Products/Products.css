@@ -1,6 +1,15 @@
+@import url('../../generalCSS/colors.css');
+
 .Products-contenedor_main {
     background-color: #222222;
     padding: 20px;
     color: white;
+    overflow-y: auto;
+    height: 600px;
     min-height: 90vh;
+}
+
+.Products-contenedor_main.Products-modo_claro{
+    color: black;
+    background-color: var(--colorGris);
 }

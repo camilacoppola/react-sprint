@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
 import { consumeMenuContext } from '../../contexts/MenuContext'
 import { consumeThemeContext } from '../../contexts/ThemeContext'
-import Button from '../Button/Button'
 
 const Sidebar = () => {
 
@@ -20,7 +19,7 @@ const Sidebar = () => {
   useEffect(() =>{
     if(menuVisibility){
       document.addEventListener('click', (e) =>{
-        if(sidebar.current.classList.contains("Sidebar-showed") && !sidebar.current.contains(e.target)){
+        if(sidebar.current?.classList.contains("Sidebar-showed") && !sidebar.current.contains(e.target)){
           sidebar.current.classList.remove('Sidebar-showed')
           changeMenuVisibility(false)
         }
@@ -52,7 +51,7 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className='Sidebar-nav-link' to="/products/new">
+                <NavLink className='Sidebar-nav-link' to="/products">
                     <img className='Sidebar-nav-link-icon' src='/icons/package-variant-closed.svg' alt='Icono productos'/>
                     Productos
                 </NavLink>
@@ -60,8 +59,8 @@ const Sidebar = () => {
           </ul>
         </nav>
         {darkModeTheme?
-        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_oscuro'><img className='Sidebar_boton_theme_icon' src="./icons/light_mode.svg"/> Cambiar a modo claro</button>) :
-        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_claro'><img className='Sidebar_boton_theme_icon boton_theme_oscuro' src="./icons/dark_mode.svg"/> Cambiar a modo oscuro </button>)
+        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_oscuro'><img className='Sidebar_boton_theme_icon' src="/icons/light_mode.svg"/> Cambiar a modo claro</button>) :
+        (<button onClick={toggleTheme} className='Sidebar-Boton_modo_claro'><img className='Sidebar_boton_theme_icon boton_theme_oscuro' src="/icons/dark_mode.svg"/> Cambiar a modo oscuro </button>)
         }
         <div className='Sidebar-container-user'>
           <img className='Sidebar-container-user-image' src='/photos/foto_user_perfil.jpg' alt='Foto de perfil de usuario'></img>
