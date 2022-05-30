@@ -1,19 +1,52 @@
 @import url('../../generalCSS/colors.css');
+@import url('../../generalCSS/reset.css');
 
-.active{
+*{
+    box-sizing: border-box;
+}
+
+.Sidebar-nav-link:hover{
+    background-color: var(--grisT2Selected);
+}
+
+.Sidebar-nav-link.active{
     background-color: var(--grisT2);
 }
 
 .Sidebar{
+    z-index: 10;
+    position: absolute;
+    left: 0px;
     height: 100vh;
+    overflow: hidden;
+    width: 0px;
+    background-color: #222222b0;
+    backdrop-filter: blur(2px);
     display: none;
-    width: 296px;
-    padding: 0 0.5rem 0.5rem;
-    background-color: var(--negroT1);
-    position: relative;
 }
 
-.Sidebar.Sidebar-showed{
+.Sidebar-container-user{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 0.9rem);
+    padding: 0.2rem;
+    display: flex;
+    color: white;
+    border-radius: 1rem;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--grisT2);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.Sidebar-container-user:hover{
+    background-color: var(--grisT2Selected);
+}
+
+.Sidebar-showed{
+    width: 296px;
+    padding: 0 0.5rem;
     display: block;
 }
 
@@ -46,24 +79,6 @@
     filter: invert(1);
 }
 
-.Sidebar-nav-link:hover{
-    background-color: var(--grisT2);
-}
-
-.Sidebar-container-user{
-    display: flex;
-    background-color: var(--grisT2);
-    padding: 0.2rem;
-    border-radius: 1rem;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 0.5rem;
-    color: white;
-    width: calc(100% - 1rem) ;
-    align-items: center;
-    gap: 0.3rem;
-}
-
 .Sidebar-container-user-image{
     border-radius: 50%;
     width: 1.5rem;
@@ -72,18 +87,17 @@
     object-position: center;
 }
 
-.Sidebar-showed{
-    display: flex;
-    flex-direction: column;
-}
-
 .Sidebar-container-user-text{
     text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 1024px) {
     .Sidebar{
-        display: flex;
-        flex-direction: column;
+        width: 296px;
+        display: block;
+        position: relative;
+        padding: 0 0.5rem;
+        background-color: var(--negroT1);
+        backdrop-filter: blur(0px);
     }
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
 import { consumeMenuContext } from '../../contexts/MenuContext'
@@ -9,14 +9,24 @@ const Sidebar = () => {
 
   const [menuVisibilidad, setMenuVisibilidad] = useState(menuVisibility)
 
-  console.log(menuVisibility)
-
   useEffect(() => {
     setMenuVisibilidad(menuVisibility)
   }, [menuVisibility])
 
+  useEffect(() =>{
+    if(menuVisibility){
+      document.addEventListener('click', (e) =>{
+        if(!sidebar.current.contains(e.target)){
+          sidebar.current.classList.remove('Sidebar-showed')
+        }
+      })
+    }
+  }, [menuVisibility])
+
+  const sidebar = useRef();
+
   return (
-    <aside className={menuVisibilidad ? 'Sidebar Sidebar-showed' : 'Sidebar'}>
+    <aside ref={sidebar} className={menuVisibilidad ? 'Sidebar Sidebar-showed' : 'Sidebar'}>
       <img className='Sidebar-logo' src='/icons/MiEcommerce.svg' alt='Logo de Ecommerce'></img>
         <nav>
           <ul className='Sidebar-nav'>
