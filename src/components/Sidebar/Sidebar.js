@@ -16,7 +16,7 @@ const Sidebar = () => {
   useEffect(() =>{
     if(menuVisibility){
       document.addEventListener('click', (e) =>{
-        if(sidebar.current.classList.contains("Sidebar-showed") && !sidebar.current.contains(e.target)){
+        if(sidebar.current?.classList.contains("Sidebar-showed") && !sidebar.current.contains(e.target)){
           sidebar.current.classList.remove('Sidebar-showed')
           changeMenuVisibility(false)
         }
@@ -38,7 +38,7 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className='Sidebar-nav-link' to="/products/new">
+                <NavLink className='Sidebar-nav-link' to="/products">
                     <img className='Sidebar-nav-link-icon' src='/icons/package-variant-closed.svg' alt='Icono productos'/>
                     Productos
                 </NavLink>

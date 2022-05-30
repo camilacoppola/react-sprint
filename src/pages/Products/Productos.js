@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProductsList from '../../components/ProductsList/ProductsList'
-
+import { productContext } from '../../contexts/ProductosContext'
 import './Products.css'
 
 
 const Productos = () => {
   
-  const [productos, setProductos] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:3001/products")
-    .then(resp => resp.json())
-    .then(data => setProductos(data))
-  }, [])
-  
+ const {productos} = useContext(productContext)
   
   return (
     <>

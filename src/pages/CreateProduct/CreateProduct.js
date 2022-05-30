@@ -20,7 +20,7 @@ const CreateProduct = () => {
 
 
     return (
-        <main className={!darkModeTheme?'ProductoEditAndCreate-contenedor_main lightmode':'ProductoEditAndCreate-contenedor_main' }>
+        <main className={!darkModeTheme?'ProductoEditAndCreate-contenedor_main lightmode':'ProductoEditAndCreate-contenedor_main' } style={{overflowY:"scroll"}}>
             <ProductForm handleSubmit={handleSubmit}/>
         </main>
       )
