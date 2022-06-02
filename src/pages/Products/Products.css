@@ -2,11 +2,10 @@
 
 .Products-contenedor_main {
     background-color: #222222;
-    padding: 20px;
+    padding-bottom: 50px;
     color: white;
     overflow-y: auto;
-    height: 600px;
-    min-height: 90vh;
+    height: 90vh;
 }
 
 .Products-contenedor_main.Products-modo_claro{
