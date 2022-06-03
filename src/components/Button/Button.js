@@ -3,11 +3,11 @@ import './Button.css'
 import './Link.css'
 import { Link } from 'react-router-dom';
 
-const Button = ({tipoButton, textoDescripcion, linkTo, claseBoton}) => {
+const Button = ({tipoButton, textoDescripcion, linkTo, claseBoton, accion}) => {
     let botonAElegir;
     switch(tipoButton){
         case "tipoBoton1": 
-            botonAElegir = (<button className= 'Button-button1'>{textoDescripcion}</button>)
+            botonAElegir = (<button className= {'Button-button1 ' + (claseBoton?claseBoton:'')} onClick={accion} >{textoDescripcion}</button>)
             break;
         case "tipoBoton2":
             botonAElegir = (<button className= 'Button-button2'>{textoDescripcion}</button>)

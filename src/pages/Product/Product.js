@@ -25,9 +25,7 @@ const Product = () => {
         navigate('/products')
     }
 
-    const handleDelete = () => {
-      borrarProducto(producto.id)
-    }
+
     const {darkModeTheme} = useContext(consumeThemeContext)
 
     
@@ -40,6 +38,7 @@ const Product = () => {
           {
             Object.keys(producto).length > 0 &&
             <>
+              {/*<Header handleDelete={handleDelete}/>*/}
               <ProductoDescripcion producto={producto}/>                   
               <ProductForm producto={producto} handleSubmit={handleSubmit} setProducto={setProducto} /> 
             </>
