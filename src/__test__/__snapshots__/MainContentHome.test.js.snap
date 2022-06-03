@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContentHome Funcionamiento del boton - Ver listado 1`] = `
+<a
+  class="Button-link1 "
+  href="/products"
+>
+  Ver Listado
+</a>
+`;

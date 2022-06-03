@@ -23,7 +23,7 @@ const MainContentHome = () => {
         <div className='Home-tiendas_home'>
             <div className='Home-imgDescripcion_home'>
                 <img className='Home-logoProductsTienda_home'src={logoTiendas} alt="Logo productos" />
-                <p>10 tiendas</p>
+                <p>10 Tiendas</p>
             </div>
             <div className='Home-contenedorButton_home'>
                 <Button tipoButton={"tipoLink1"} textoDescripcion={"Ver Listado"} linkTo={'/stores'} />
