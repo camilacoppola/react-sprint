@@ -7,15 +7,6 @@ const ProductosContext = ({children}) => {
     const [filteredProducts, setfilteredProducts] = useState([])
     const [productos, setProductos] = useState([])
 
-/*    useEffect(() => {
-      fetch("http://localhost:3001/products")
-      .then(resp => resp.json())
-      .then(data => {
-          setProductos(data)
-          setfilteredProducts(data)
-        })
-    },[])*/
-
     useEffect(() => {
       traerProductos().then(data=>{
         setProductos(data)
