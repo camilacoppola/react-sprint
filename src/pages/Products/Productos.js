@@ -6,7 +6,7 @@ import {consumeThemeContext} from '../../contexts/ThemeContext'
 
 const Productos = () => {
   
- const {productos} = useContext(productContext)
+ const {productos} = useContext(productContext) 
  const {darkModeTheme} = useContext(consumeThemeContext)
 
 
@@ -14,9 +14,9 @@ const Productos = () => {
     <>
       <main className={darkModeTheme?'Products-contenedor_main':'Products-contenedor_main Products-modo_claro'}>
           {
-            productos.length > 0 ?
-            <ProductsList productos={productos} />
-            :<h2>Cargando...</h2>
+             productos.length > 0?
+            <ProductsList productos={productos.productos} />
+            : <h2>Cargando</h2>
           }
       </main>
     </>
