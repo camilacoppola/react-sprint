@@ -26,12 +26,10 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
     
     useEffect(() => {
       if(Object.keys(producto).length !== 0){
-          console.log("dentro del if: ",producto)
         //let {nombre,valor,descripcion,imagen,opcionTienda} = producto
         cambiarCampos(producto)
         setStock(producto.stock)
       }
-      console.log("fuera del if: ",producto)
     }, [producto])
 
     const handleProducto = (e) => {
@@ -46,7 +44,6 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
             return
         }
         setError({estado:false,msg:''})
-        console.log("first")
         handleSubmit({...form,stock})
     }
     
@@ -85,7 +82,7 @@ const ProductForm = ({producto = {},handleSubmit, setProducto}) => {
                 </div>
                 <GaleriaImagenesActuales setProducto={setProducto} imagen={form.imagen || ''} imagenes={producto.imagenes} handleChangeForm={handleChangeForm} mostrar={Object.keys(producto).length > 0?true:false}/>
                 <form onSubmit={(e) => handleProducto(e)} className="InformacionProducto-form_botones">
-                    <button><Link to="/products">Cancelar</Link></button>
+                    {/* <button><Link to="/products">Cancelar</Link></button> */}
                     <button>Guardar</button>
                 </form>
                 {

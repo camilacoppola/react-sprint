@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import ProductForm from '../../components/Productos/InformacionProducto/ProductForm'
 import ProductoDescripcion from '../../components/Productos/ProductoDescripcion/ProductoDescripcion'
 import { consumeThemeContext } from '../../contexts/ThemeContext'
+import traerProductoXId from '../../utils/traerProductoXId'
 import actualizarProducto from '../../utils/actualizarProducto'
 import borrarProducto from '../../utils/borrarProducto'
 import '../Products/ProductoEditAndCreate.css' //deberia estar sobre esta carpeta
@@ -12,12 +13,8 @@ const Product = () => {
     const [producto, setProducto] = useState({}) 
     const {id} = useParams()
      useEffect(() => {
-        fetch(`http://localhost:3001/products/${id}`)
-        .then(resp => resp.json())
-        .then(data => {
-          setProducto(data)
-        })
-      }, []) 
+        traerProductoXId(id).then(data => {setProducto(data)})
+      }, [])
 
     const handleSubmit = (producto) => {
         producto.imagenes = [...producto.imagenes, producto.imagen]

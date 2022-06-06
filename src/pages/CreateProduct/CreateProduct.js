@@ -4,6 +4,7 @@ import ProductForm from '../../components/Productos/InformacionProducto/ProductF
 import { consumeThemeContext } from '../../contexts/ThemeContext'
 import guardarProducto from '../../utils/guardarProducto'
 import '../Products/ProductoEditAndCreate.css'
+
 const CreateProduct = () => {
     const navigate = useNavigate()
 
@@ -16,9 +17,9 @@ const CreateProduct = () => {
     }
 
     const {darkModeTheme} = useContext(consumeThemeContext)
-    console.log(darkModeTheme)
-
-
+    
+    console.log(darkModeTheme);
+    
     return (
         <main className={darkModeTheme?'ProductoEditAndCreate-contenedor_main':'ProductoEditAndCreate-contenedor_main ProductoEditAndCreate-modo_claro'} style={{overflowY:"scroll"}}>
             <ProductForm handleSubmit={handleSubmit}/>
