@@ -1,7 +1,6 @@
-import { fireEvent, render,screen} from "@testing-library/react";
+import {render,screen} from "@testing-library/react";
 import {MemoryRouter} from 'react-router-dom';
 import '@testing-library/jest-dom';
-import userEvent from "@testing-library/user-event";
 import ProductsList from "../components/ProductsList/ProductsList";
 import ThemeContext from "../contexts/ThemeContext";
 
