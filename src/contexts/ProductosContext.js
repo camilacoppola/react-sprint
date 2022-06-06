@@ -1,18 +1,17 @@
 import React, { createContext, useEffect, useState } from 'react';
+import traerProductos from '../utils/traerProductos';
 export const productContext = createContext();
 
 const ProductosContext = ({children}) => {
     const [query, setQuery] = useState('')
     const [filteredProducts, setfilteredProducts] = useState([])
     const [productos, setProductos] = useState([])
-
+ 
     useEffect(() => {
-      fetch("http://localhost:3001/products")
-      .then(resp => resp.json())
-      .then(data => {
-          setProductos(data)
-          setfilteredProducts(data)
-        })
+      traerProductos().then(data=>{
+        setProductos(data)
+        setfilteredProducts(data)
+      })
     },[])
 
     useEffect(() =>{
@@ -21,7 +20,7 @@ const ProductosContext = ({children}) => {
 
 const buscarProductosRelacionados = ()=>{
    let nuevosProductos = productos.filter( producto => producto.nombre.toLowerCase().includes(query.toLowerCase()))
-   setfilteredProducts(nuevosProductos)
+     setfilteredProducts(nuevosProductos)     
 }
 
   return (

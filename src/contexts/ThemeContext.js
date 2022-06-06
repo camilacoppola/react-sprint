@@ -13,7 +13,6 @@ const ThemeContext = ({children}) => {
             localStorage.setItem('modoOscuro', false);
             setTheme(false);
         }else{
-            console.log()
             setTheme(value);
         }
     }, [])

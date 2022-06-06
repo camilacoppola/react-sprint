@@ -11,6 +11,10 @@
     color: white;
 }
 
+.Header-button_display_none{
+    display: none;
+}
+
 .Header-button_hide{
     padding: 0.5rem;
     margin-right: 0.5rem;

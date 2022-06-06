@@ -12,7 +12,7 @@ const CardProducto = ({producto}) => {
     <article className={darkModeTheme?'CardProducto-container_article':'CardProducto-container_article CardProducto-container_article-modo_claro'}>
         <div className='CardProducto-container_producto'>
             <div className='CardProducto-container_imagenProducto'>
-                <img src={producto.imagen} />
+                <img role="imagenProducto" src={producto.imagen} />
             </div>
             <div className='CardProducto-container_descripcion'>
                 <p>{producto.nombre + ' ' +producto.descripcion}</p>

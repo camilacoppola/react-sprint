@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContentHome Funcionamiento del boton - Agregar producto 1`] = `
+<a
+  class="Button-link1 "
+  href="/products/new"
+>
+  Agregar Producto
+</a>
+`;
+
+exports[`MainContentHome Funcionamiento del boton - Agregar tiendas - Pagina de error 1`] = `
+<a
+  class="Button-link1 "
+  href="/stores/new"
+>
+  Agregar Tienda
+</a>
+`;
+
+exports[`MainContentHome Funcionamiento del boton - Ver listado 1`] = `
+<a
+  class="Button-link1 "
+  href="/products"
+>
+  Ver Listado
+</a>
+`;
+
+exports[`MainContentHome Funcionamiento del boton - Ver listado tiendas - Pagina de error 1`] = `
+<a
+  class="Button-link1 "
+  href="/stores"
+>
+  Ver Listado
+</a>
+`;
