@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serverJson": "cd ./src/api/ && json-server --watch db.json --port 3001"
+    "serverJson": "cd ./src/api/ && json-server --watch db.json --port 3001",
+    "test:coverage": "react-scripts test --coverage --watch-all -- --config=jest.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^8.0.0"
   }
 }

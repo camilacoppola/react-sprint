@@ -6,7 +6,7 @@ const ProductosContext = ({children}) => {
     const [query, setQuery] = useState('')
     const [filteredProducts, setfilteredProducts] = useState([])
     const [productos, setProductos] = useState([])
-
+ 
     useEffect(() => {
       traerProductos().then(data=>{
         setProductos(data)

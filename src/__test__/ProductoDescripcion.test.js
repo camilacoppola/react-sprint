@@ -7,7 +7,7 @@ import "@testing-library/jest-dom"
 
 
 describe('Producto descripcion', () => {
-    
+    //En este describe se hacen los test con respecto al componente ProductoDescripcion
     beforeEach(()=>{
 
         let producto = {
@@ -35,6 +35,8 @@ describe('Producto descripcion', () => {
     })
 
     test('Testeando la imagen del producto ', () => {
+        //En este test, se prueba que el producto que se recibe por props, venga correctamente.
+        //Se testea la imagen del producto.
         let imagen = screen.getByAltText(/perro/i)
         expect(imagen).toBeInTheDocument()
         expect(imagen.getAttribute('src')).toMatch("http://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg")
@@ -42,14 +44,19 @@ describe('Producto descripcion', () => {
     })
 
     test('Testeando que en el paragraph se muestre la descripcion ', () => {
+        //En este test, se prueba que el producto que se recibe por props, venga correctamente.
+        //Se testea la descripcion del producto.
         let textDescription = screen.getByText(/perro/i)
         expect(textDescription).toBeInTheDocument()
-        console.log(textDescription.innerHTML)
         expect(textDescription.innerHTML).toMatch(/^perro perrito de mascota$/i)
     })
 
-    test('Testeando el h3', () => {
-        //let etiquetah3 = screen.getByRole('heading', {level:3})
+    test('Testeando los h3', () => {
+        //En este test, se prueba que el producto que se recibe por props, venga correctamente.
+        //Se testea los h3, el del stock y el del valor        
+        let [primerH3,segundoH3] = screen.getAllByRole('heading', {level:3})
+        expect(primerH3.innerHTML).toMatch('500')
+        expect(segundoH3.innerHTML).toBe('1')
     })
 
 })

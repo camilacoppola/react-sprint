@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const useForm = (initialValues) => {
     
     
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState(initialValues)
 
 
 

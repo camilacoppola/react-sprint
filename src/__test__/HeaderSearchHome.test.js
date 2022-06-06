@@ -10,7 +10,8 @@ import ProductosContext from "../contexts/ProductosContext";
 //let query = jest.fn("../contexts/ProductosContext")
 
 describe('Header search home', () => {
-    //query.mockReturnValue({query:"asdsadsad",setQuery:"asdsadasasd"})
+    //En este describe se van a realizar test, con respecto a el componente HeaderSearchHome.
+    
     beforeEach(() => {
         render(
             <ThemeContext>
@@ -22,6 +23,7 @@ describe('Header search home', () => {
         )})
 
     test('busqueda input', () => {
+        //En este test, se verifica que cuando se hace click en el input e ingresa la palabara coca, se actualice a ese valor
         const input = screen.getByRole("textbox")
         userEvent.click(input)
         userEvent.keyboard("coca")
@@ -31,6 +33,8 @@ describe('Header search home', () => {
 
 
     test('Test boton ', () => {
+        //En este test, se verifica que el boton link que se encuentra, contenga en su atributo href /products/new
+        //Tambien se verifica que el link tenga como contenido Agregar Producto
         const link = screen.getByRole("link")
         userEvent.click(link)
         expect(link.getAttribute("href")).toMatch("/products/new")

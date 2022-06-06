@@ -5,7 +5,6 @@ import './Products.css'
 import {consumeThemeContext} from '../../contexts/ThemeContext'
 
 const Productos = () => {
-  
  const {productos} = useContext(productContext) 
  const {darkModeTheme} = useContext(consumeThemeContext)
  const [productosFR, setProductosFR] = useState(0)
