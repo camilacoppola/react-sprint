@@ -1,6 +1,5 @@
 import React from 'react'
 import CardProducto from './CardProducto/CardProducto'
-
 import './ProductsList.css'
 
 const ProductsList = ({productos}) => {
