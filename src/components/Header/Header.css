@@ -47,3 +47,12 @@
 .Header-modo_claro .Header-button_hide-image{
     filter: invert(0);
 }
+
+.Header.Header-modo_claro .botonEliminar{
+    color: black;
+}
+
+
+.Header .botonEliminar{
+    color: white;
+}
